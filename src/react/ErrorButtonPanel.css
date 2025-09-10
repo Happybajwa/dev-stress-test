@@ -1,0 +1,1386 @@
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+/* Prevent any global styles from affecting the error panel - TARGETED APPROACH */
+.error-panel-toggle {
+  /* Prevent inheritance from demo page animations */
+  animation: none !important;
+  /* Only allow our specific transform transition */
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.error-panel-toggle:hover {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* CRITICAL: Protect error panel from demo page animations */
+.shake-animation .error-panel-toggle,
+.glitch-animation .error-panel-toggle,
+.shake-animation .error-button-panel,
+.glitch-animation .error-button-panel,
+.app-container .error-panel-toggle,
+.app-container .error-button-panel {
+  animation: none !important;
+  transform: none !important;
+  filter: none !important;
+  position: fixed !important;
+  z-index: 2147483647 !important;
+}
+
+/* Ultra-specific rule to override ANY animation on the toggle button */
+.error-panel-toggle.error-panel-toggle.error-panel-toggle {
+  animation: none !important;
+  animation-name: none !important;
+  animation-duration: 0s !important;
+  animation-iteration-count: 0 !important;
+  animation-play-state: paused !important;
+}
+
+/* Toggle Button - Professional Warning Style */
+.error-panel-toggle {
+  position: fixed !important;
+  z-index: 2147483647 !important; /* Maximum possible z-index */
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  border: none !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+  box-shadow: 
+    0 6px 20px rgba(245, 158, 11, 0.3),
+    0 3px 8px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.2) !important;
+  /* Override any global button styles */
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: initial !important;
+  font-weight: initial !important;
+  font-family: initial !important;
+  line-height: initial !important;
+  text-decoration: none !important;
+  /* Ensure it's always visible and stable */
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: none !important;
+  animation: none !important;
+  /* Prevent any layout interference */
+  float: none !important;
+  clear: none !important;
+  overflow: visible !important;
+  /* Ensure fixed positioning works */
+  left: auto !important;
+  top: auto !important;
+  /* Prevent text/content interference */
+  white-space: nowrap !important;
+  text-align: center !important;
+  vertical-align: baseline !important;
+  /* CRITICAL: Isolate from parent filters and transforms */
+  filter: none !important;
+  backdrop-filter: none !important;
+  isolation: isolate !important;
+  contain: layout style paint !important;
+  /* Escape any container constraints */
+  min-width: 56px !important;
+  max-width: 56px !important;
+  min-height: 56px !important;
+  max-height: 56px !important;
+  /* Prevent demo page container from affecting positioning */
+  box-sizing: border-box !important;
+}
+
+.error-panel-toggle.dark {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  box-shadow: 
+    0 6px 20px rgba(245, 158, 11, 0.4),
+    0 3px 8px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.error-panel-toggle:hover {
+  transform: scale(1.05) translateY(-1px);
+  box-shadow: 
+    0 8px 25px rgba(245, 158, 11, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.error-panel-toggle.dark:hover {
+  box-shadow: 
+    0 8px 25px rgba(245, 158, 11, 0.5),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.error-panel-toggle:active {
+  transform: scale(0.98) translateY(0px);
+  transition: all 0.1s ease;
+}
+
+/* Removed warning-glow animations to prevent constant visual changes */
+
+/* Legacy animations for backward compatibility */
+@keyframes gentle-glow {
+  0% { 
+    box-shadow: 
+      0 8px 25px rgba(245, 158, 11, 0.4),
+      0 4px 12px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.2),
+      0 0 20px rgba(245, 158, 11, 0.3);
+  }
+  100% { 
+    box-shadow: 
+      0 8px 25px rgba(245, 158, 11, 0.6),
+      0 4px 12px rgba(0, 0, 0, 0.1),
+      0 0 0 1px rgba(255, 255, 255, 0.2),
+      0 0 30px rgba(245, 158, 11, 0.5);
+  }
+}
+
+@keyframes intense-glow {
+  0% { 
+    box-shadow: 
+      0 12px 35px rgba(245, 158, 11, 0.6),
+      0 8px 20px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.3),
+      0 0 30px rgba(245, 158, 11, 0.5);
+  }
+  100% { 
+    box-shadow: 
+      0 12px 35px rgba(245, 158, 11, 0.8),
+      0 8px 20px rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(255, 255, 255, 0.3),
+      0 0 40px rgba(245, 158, 11, 0.7);
+  }
+}
+
+/* Position variants - Ensure always visible */
+.error-panel-toggle.position-bottom-right {
+  bottom: 24px !important;
+  right: 24px !important;
+  left: auto !important;
+  top: auto !important;
+}
+
+.error-panel-toggle.position-bottom-left {
+  bottom: 24px !important;
+  left: 24px !important;
+  right: auto !important;
+  top: auto !important;
+}
+
+.error-panel-toggle.position-top-right {
+  top: 24px !important;
+  right: 24px !important;
+  left: auto !important;
+  bottom: auto !important;
+}
+
+.error-panel-toggle.position-top-left {
+  top: 24px !important;
+  left: 24px !important;
+  right: auto !important;
+  bottom: auto !important;
+}
+
+/* Running indicator - Matches warning theme */
+.running-indicator {
+  position: absolute !important;
+  top: -6px !important;
+  right: -6px !important;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    0 3px 8px rgba(239, 68, 68, 0.3),
+    0 1px 4px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  z-index: 999999 !important; /* Same as parent button */
+  /* CRITICAL: Isolate from parent filters */
+  filter: none !important;
+  isolation: isolate !important;
+}
+
+/* Removed pulse-indicator animation to prevent constant visual changes */
+
+/* Main Panel - Clean and Organized */
+.error-button-panel {
+  position: fixed !important;
+  z-index: 999998 !important; /* High z-index, but lower than toggle button */
+  width: 380px;
+  max-height: 600px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 8px 16px rgba(0, 0, 0, 0.04);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  overflow: hidden;
+  /* Ensure it's always visible when shown */
+  visibility: visible !important;
+  opacity: 1 !important;
+  /* CRITICAL: Isolate from parent filters and transforms */
+  filter: none !important;
+  backdrop-filter: none !important;
+  isolation: isolate !important;
+  contain: layout style paint !important;
+}
+
+.error-button-panel.dark {
+  background: #111827;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Panel positioning */
+.error-button-panel.position-bottom-right {
+  bottom: 88px;
+  right: 24px;
+}
+
+.error-button-panel.position-bottom-left {
+  bottom: 88px;
+  left: 24px;
+}
+
+.error-button-panel.position-top-right {
+  top: 88px;
+  right: 24px;
+}
+
+.error-button-panel.position-top-left {
+  top: 88px;
+  left: 24px;
+}
+
+/* Header */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  background: #fafafa;
+}
+
+.error-button-panel.dark .panel-header {
+  background: #1f2937;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.panel-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #111827;
+}
+
+.error-button-panel.dark .panel-title {
+  color: #f9fafb;
+}
+
+.panel-header-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.theme-toggle,
+.close-button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.error-button-panel.dark .theme-toggle,
+.error-button-panel.dark .close-button {
+  background: #374151;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #d1d5db;
+}
+
+.theme-toggle:hover,
+.close-button:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.error-button-panel.dark .theme-toggle:hover,
+.error-button-panel.dark .close-button:hover {
+  background: #4b5563;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Buttons Container */
+.buttons-container {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 16px 24px;
+}
+
+.buttons-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.buttons-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.buttons-container::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.error-button-panel.dark .buttons-container::-webkit-scrollbar-thumb {
+  background: #4b5563;
+}
+
+/* Error Buttons - Clean Design */
+.error-button {
+  width: 100%;
+  min-height: 64px;
+  margin-bottom: 8px;
+  padding: 12px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.error-button-panel.dark .error-button {
+  background: #1f2937;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.error-button:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.error-button.running {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.error-button-panel.dark .error-button.running {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}
+
+/* Button Content Layout */
+.button-content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+}
+
+.button-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  flex-shrink: 0;
+}
+
+.error-button-panel.dark .button-icon {
+  background: #374151;
+}
+
+.button-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.button-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.error-button-panel.dark .button-label {
+  color: #f9fafb;
+}
+
+.button-description {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.error-button-panel.dark .button-description {
+  color: #9ca3af;
+}
+
+/* Button Actions */
+.button-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.severity-badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.severity-badge.severity-low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.severity-badge.severity-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.severity-badge.severity-high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.severity-badge.severity-critical {
+  background: #fde2e8;
+  color: #be185d;
+}
+
+.error-button-panel.dark .severity-badge.severity-low {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+.error-button-panel.dark .severity-badge.severity-medium {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+}
+
+.error-button-panel.dark .severity-badge.severity-high {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.error-button-panel.dark .severity-badge.severity-critical {
+  background: rgba(236, 72, 153, 0.2);
+  color: #f472b6;
+}
+
+.stop-button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #ef4444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.error-button-panel.dark .stop-button {
+  background: #374151;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.stop-button:hover {
+  background: #fef2f2;
+  border-color: #ef4444;
+}
+
+.error-button-panel.dark .stop-button:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+}
+
+/* Status and Logs */
+.status-indicator {
+  padding: 12px 24px;
+  border-top: 1px solid #f3f4f6;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.error-button-panel.dark .status-indicator {
+  background: #1f2937;
+  border-top-color: rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: pulse 2s infinite;
+}
+
+.status-dot.running {
+  background: #3b82f6;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.logs-section {
+  border-top: 1px solid #f3f4f6;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.error-button-panel.dark .logs-section {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.logs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: #f9fafb;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.error-button-panel.dark .logs-header {
+  background: #111827;
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
+.logs-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.error-button-panel.dark .logs-title {
+  color: #d1d5db !important;
+}
+
+.clear-logs-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.clear-logs-button:hover {
+  background: #f3f4f6;
+}
+
+.error-button-panel.dark .clear-logs-button:hover {
+  background: #374151;
+}
+
+.logs-container {
+  padding: 8px 24px 16px;
+}
+
+.log-entry {
+  display: flex;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 11px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.error-button-panel.dark .log-entry {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+.log-time {
+  color: #9ca3af;
+  font-family: monospace;
+  flex-shrink: 0;
+}
+
+.log-type {
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.log-message {
+  color: #6b7280;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.error-button-panel.dark .log-message {
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .error-button-panel {
+    width: calc(100vw - 48px) !important;
+    left: 24px !important;
+    right: 24px !important;
+  }
+  
+  /* Ensure toggle button stays visible on mobile with absolute positioning */
+  .error-panel-toggle {
+    position: fixed !important;
+    z-index: 2147483647 !important;
+  }
+  
+  .error-panel-toggle.position-bottom-right,
+  .error-panel-toggle.position-bottom-left {
+    bottom: 24px !important;
+    right: 24px !important;
+    left: auto !important;
+    top: auto !important;
+    position: fixed !important;
+    z-index: 2147483647 !important;
+  }
+}
+
+/* Remove duplicate position variants - already defined above */
+
+/* Running indicator on toggle button */
+.running-indicator {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 4px 12px rgba(239, 68, 68, 0.4),
+    0 0 0 2px rgba(255, 255, 255, 0.9);
+  animation: pulse-error 2s ease-in-out infinite;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes pulse-error {
+  0%, 100% { 
+    transform: scale(1);
+    box-shadow: 
+      0 4px 12px rgba(239, 68, 68, 0.4),
+      0 0 0 2px rgba(255, 255, 255, 0.9),
+      0 0 0 0px rgba(239, 68, 68, 0.0);
+  }
+  50% { 
+    transform: scale(1.1);
+    box-shadow: 
+      0 4px 12px rgba(239, 68, 68, 0.6),
+      0 0 0 2px rgba(255, 255, 255, 0.9),
+      0 0 0 8px rgba(239, 68, 68, 0.2);
+  }
+}
+
+/* Error Button Panel Styles */
+.error-button-panel {
+  position: fixed;
+  z-index: 9999;
+  max-width: 420px;
+  width: 92vw;
+  max-height: 85vh;
+  overflow: hidden;
+  padding: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.08), 
+    rgba(255, 255, 255, 0.03)
+  );
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 
+    0 16px 64px rgba(0, 0, 0, 0.12),
+    0 8px 32px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  animation: panel-enter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom right;
+}
+
+@keyframes panel-enter {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.error-button-panel.position-bottom-right {
+  bottom: 80px;
+  right: 20px;
+}
+
+.error-button-panel.position-bottom-left {
+  bottom: 80px;
+  left: 20px;
+}
+
+.error-button-panel.position-top-right {
+  top: 80px;
+  right: 20px;
+}
+
+.error-button-panel.position-top-left {
+  top: 80px;
+  left: 20px;
+}
+
+.error-button-panel.dark {
+  background: linear-gradient(135deg, 
+    rgba(15, 23, 42, 0.95), 
+    rgba(30, 41, 59, 0.9)
+  );
+  border: 1px solid rgba(71, 85, 105, 0.2);
+  box-shadow: 
+    0 16px 64px rgba(0, 0, 0, 0.4),
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.error-button-panel.light {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styles */
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 20px 24px;
+  margin: 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.02), 
+    rgba(255, 255, 255, 0.01)
+  );
+  backdrop-filter: blur(8px);
+}
+
+.panel-header-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.panel-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.025em;
+}
+
+.theme-toggle {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.close-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.close-button:hover {
+  background: rgba(239, 68, 68, 0.2);
+  transform: scale(1.05);
+}
+
+/* Buttons Container with Vertical Scroll */
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px 24px;
+  margin: 0;
+  /* Custom scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+}
+
+/* Custom Scrollbar */
+.buttons-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.buttons-container::-webkit-scrollbar-track {
+  background: rgba(148, 163, 184, 0.1);
+  border-radius: 3px;
+}
+
+.buttons-container::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 3px;
+}
+
+.buttons-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}
+
+/* Error Button Styles */
+.error-button {
+  width: 100%;
+  height: 64px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.08), 
+    rgba(255, 255, 255, 0.03)
+  );
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  backdrop-filter: blur(8px);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.error-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.1), 
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.error-button:hover::before {
+  left: 100%;
+}
+
+.error-button:hover {
+  background: linear-gradient(135deg, 
+    rgba(255, 255, 255, 0.12), 
+    rgba(255, 255, 255, 0.06)
+  );
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 4px 12px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  border-color: rgba(148, 163, 184, 0.25);
+}
+
+.error-button:active {
+  transform: translateY(-1px);
+  transition: all 0.1s ease;
+}
+
+.error-button.running {
+  background: linear-gradient(135deg, 
+    rgba(59, 130, 246, 0.12), 
+    rgba(147, 51, 234, 0.08)
+  );
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 
+    0 4px 16px rgba(59, 130, 246, 0.15),
+    0 0 0 1px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  animation: running-pulse 2s ease-in-out infinite;
+}
+
+@keyframes running-pulse {
+  0%, 100% { 
+    box-shadow: 
+      0 4px 16px rgba(59, 130, 246, 0.15),
+      0 0 0 1px rgba(59, 130, 246, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  50% { 
+    box-shadow: 
+      0 4px 16px rgba(59, 130, 246, 0.25),
+      0 0 0 1px rgba(59, 130, 246, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+}
+
+.error-button.dark {
+  background: linear-gradient(135deg, 
+    rgba(30, 41, 59, 0.6), 
+    rgba(15, 23, 42, 0.4)
+  );
+  border-color: rgba(71, 85, 105, 0.2);
+  color: #f1f5f9;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.error-button.dark:hover {
+  background: linear-gradient(135deg, 
+    rgba(30, 41, 59, 0.8), 
+    rgba(15, 23, 42, 0.6)
+  );
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.error-button.light {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(226, 232, 240, 0.8);
+  color: #334155;
+}
+
+.error-button.light:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Content Layout */
+.button-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.button-icon {
+  font-size: 20px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.button-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.button-label {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-description {
+  font-size: 13px;
+  opacity: 0.7;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.severity-badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 60px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.severity-low {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.severity-medium {
+  background: rgba(251, 191, 36, 0.1);
+  color: #fbbf24;
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.severity-high {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.severity-critical {
+  background: rgba(147, 51, 234, 0.1);
+  color: #9333ea;
+  border: 1px solid rgba(147, 51, 234, 0.2);
+}
+
+/* Stop Button */
+.stop-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.1));
+  color: #fca5a5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stop-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.stop-button.dark {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.1));
+  color: #fca5a5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.stop-button.light {
+  background: linear-gradient(135deg, rgba(254, 242, 242, 0.8), rgba(254, 226, 226, 0.8));
+  color: #dc2626;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Status Indicator */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  font-size: 12px;
+  font-weight: 500;
+  color: #d1d5db;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 16px;
+}
+
+.status-indicator.light {
+  background: rgba(249, 250, 251, 0.8);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  color: #374151;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+.status-dot.running {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Logs Section */
+.logs-section {
+  margin-top: 16px;
+  border-radius: 16px;
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logs-section.light {
+  background: rgba(249, 250, 251, 0.8);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+  background: rgba(31, 41, 55, 0.5);
+}
+
+.logs-section.light .logs-header {
+  border-bottom: 1px solid rgba(209, 213, 219, 0.3);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.logs-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.logs-section.light .logs-title {
+  color: #374151;
+}
+
+.clear-logs-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background-color 200ms;
+}
+
+.clear-logs-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.logs-section.light .clear-logs-button:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.logs-container {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.log-entry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  background: rgba(31, 41, 55, 0.3);
+  font-size: 12px;
+  border-left: 3px solid transparent;
+}
+
+.logs-section.light .log-entry {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.log-time {
+  color: #9ca3af;
+  font-weight: 500;
+  min-width: 80px;
+}
+
+.logs-section.light .log-time {
+  color: #6b7280;
+}
+
+.log-type {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  min-width: 80px;
+  text-align: center;
+}
+
+.log-type-typeError {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.log-type-referenceError {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fcd34d;
+}
+
+.log-type-rangeError {
+  background: rgba(34, 197, 94, 0.2);
+  color: #86efac;
+}
+
+.log-type-syntaxError {
+  background: rgba(147, 51, 234, 0.2);
+  color: #c4b5fd;
+}
+
+.log-type-memoryLeak {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.log-message {
+  flex: 1;
+  color: #d1d5db;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logs-section.light .log-message {
+  color: #374151;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .error-button-panel {
+    padding: 16px;
+  }
+  
+  .panel-header {
+    margin-bottom: 16px;
+  }
+  
+  .panel-title {
+    font-size: 18px;
+  }
+  
+  .buttons-container {
+    max-height: 300px;
+  }
+  
+  .error-button {
+    height: 52px;
+    padding: 10px 12px;
+  }
+  
+  .button-label {
+    font-size: 14px;
+  }
+  
+  .button-description {
+    font-size: 12px;
+  }
+}
