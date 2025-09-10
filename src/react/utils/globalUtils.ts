@@ -134,7 +134,9 @@ export function clearRandomSeed(): void {
 export function getErrorMetrics(): Array<{
     type: string;
     triggeredAt: number;
-    message?: string;
+    stoppedAt?: number;
+    duration?: number;
+    status: 'running' | 'stopped' | 'error';
 }> {
     return window.__DEV_STRESS_TEST?.metrics || [];
 }

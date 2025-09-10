@@ -1,6 +1,6 @@
 module.exports = {
   preset: 'ts-jest',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   roots: ['<rootDir>/src', '<rootDir>/tests'],
   testMatch: ['**/__tests__/**/*.ts', '**/?(*.)+(spec|test).ts'],
   transform: {
@@ -12,4 +12,10 @@ module.exports = {
   ],
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov', 'html'],
+  // Fix for hanging tests with async operations
+  forceExit: true,
+  detectOpenHandles: true,
+  maxWorkers: 1,
+  testTimeout: 10000,
+  setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
 };

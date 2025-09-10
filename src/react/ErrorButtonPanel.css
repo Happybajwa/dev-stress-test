@@ -52,7 +52,7 @@
   justify-content: center !important;
   transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
   background: linear-gradient(135deg, #f59e0b, #d97706) !important;
-  box-shadow: 
+  box-shadow:
     0 6px 20px rgba(245, 158, 11, 0.3),
     0 3px 8px rgba(0, 0, 0, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.2) !important;
@@ -97,7 +97,7 @@
 
 .error-panel-toggle.dark {
   background: linear-gradient(135deg, #f59e0b, #d97706);
-  box-shadow: 
+  box-shadow:
     0 6px 20px rgba(245, 158, 11, 0.4),
     0 3px 8px rgba(0, 0, 0, 0.2),
     0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -105,14 +105,14 @@
 
 .error-panel-toggle:hover {
   transform: scale(1.05) translateY(-1px);
-  box-shadow: 
+  box-shadow:
     0 8px 25px rgba(245, 158, 11, 0.4),
     0 4px 12px rgba(0, 0, 0, 0.15),
     0 0 0 1px rgba(255, 255, 255, 0.3);
 }
 
 .error-panel-toggle.dark:hover {
-  box-shadow: 
+  box-shadow:
     0 8px 25px rgba(245, 158, 11, 0.5),
     0 4px 12px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(255, 255, 255, 0.15);
@@ -127,15 +127,15 @@
 
 /* Legacy animations for backward compatibility */
 @keyframes gentle-glow {
-  0% { 
-    box-shadow: 
+  0% {
+    box-shadow:
       0 8px 25px rgba(245, 158, 11, 0.4),
       0 4px 12px rgba(0, 0, 0, 0.1),
       0 0 0 1px rgba(255, 255, 255, 0.2),
       0 0 20px rgba(245, 158, 11, 0.3);
   }
-  100% { 
-    box-shadow: 
+  100% {
+    box-shadow:
       0 8px 25px rgba(245, 158, 11, 0.6),
       0 4px 12px rgba(0, 0, 0, 0.1),
       0 0 0 1px rgba(255, 255, 255, 0.2),
@@ -144,15 +144,15 @@
 }
 
 @keyframes intense-glow {
-  0% { 
-    box-shadow: 
+  0% {
+    box-shadow:
       0 12px 35px rgba(245, 158, 11, 0.6),
       0 8px 20px rgba(0, 0, 0, 0.15),
       0 0 0 1px rgba(255, 255, 255, 0.3),
       0 0 30px rgba(245, 158, 11, 0.5);
   }
-  100% { 
-    box-shadow: 
+  100% {
+    box-shadow:
       0 12px 35px rgba(245, 158, 11, 0.8),
       0 8px 20px rgba(0, 0, 0, 0.15),
       0 0 0 1px rgba(255, 255, 255, 0.3),
@@ -205,7 +205,7 @@
   align-items: center;
   justify-content: center;
   border: 3px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 
+  box-shadow:
     0 3px 8px rgba(239, 68, 68, 0.3),
     0 1px 4px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(4px);
@@ -226,10 +226,11 @@
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 16px;
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.08),
     0 8px 16px rgba(0, 0, 0, 0.04);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   overflow: hidden;
   /* Ensure it's always visible when shown */
   visibility: visible !important;
@@ -244,7 +245,7 @@
 .error-button-panel.dark {
   background: #111827;
   border-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 
+  box-shadow:
     0 20px 40px rgba(0, 0, 0, 0.4),
     0 8px 16px rgba(0, 0, 0, 0.3);
 }
@@ -571,8 +572,13 @@
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 .logs-section {
@@ -626,6 +632,51 @@
   background: #374151;
 }
 
+/* Control Section for Stop All button */
+.control-section {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.control-section.dark {
+  border-bottom: 1px solid #374151;
+}
+
+.stop-all-button {
+  width: 100%;
+  padding: 10px 16px;
+  border: 2px solid #dc2626;
+  background: #fef2f2;
+  color: #dc2626;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.stop-all-button:hover {
+  background: #dc2626;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.stop-all-button.dark {
+  background: #1f2937;
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+.stop-all-button.dark:hover {
+  background: #ef4444;
+  color: white;
+}
+
 .logs-container {
   padding: 8px 24px 16px;
 }
@@ -671,13 +722,13 @@
     left: 24px !important;
     right: 24px !important;
   }
-  
+
   /* Ensure toggle button stays visible on mobile with absolute positioning */
   .error-panel-toggle {
     position: fixed !important;
     z-index: 2147483647 !important;
   }
-  
+
   .error-panel-toggle.position-bottom-right,
   .error-panel-toggle.position-bottom-left {
     bottom: 24px !important;
@@ -706,7 +757,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 
+  box-shadow:
     0 4px 12px rgba(239, 68, 68, 0.4),
     0 0 0 2px rgba(255, 255, 255, 0.9);
   animation: pulse-error 2s ease-in-out infinite;
@@ -714,16 +765,17 @@
 }
 
 @keyframes pulse-error {
-  0%, 100% { 
+  0%,
+  100% {
     transform: scale(1);
-    box-shadow: 
+    box-shadow:
       0 4px 12px rgba(239, 68, 68, 0.4),
       0 0 0 2px rgba(255, 255, 255, 0.9),
-      0 0 0 0px rgba(239, 68, 68, 0.0);
+      0 0 0 0px rgba(239, 68, 68, 0);
   }
-  50% { 
+  50% {
     transform: scale(1.1);
-    box-shadow: 
+    box-shadow:
       0 4px 12px rgba(239, 68, 68, 0.6),
       0 0 0 2px rgba(255, 255, 255, 0.9),
       0 0 0 8px rgba(239, 68, 68, 0.2);
@@ -739,20 +791,22 @@
   max-height: 85vh;
   overflow: hidden;
   padding: 0;
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.08), 
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
     rgba(255, 255, 255, 0.03)
   );
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
-  box-shadow: 
+  box-shadow:
     0 16px 64px rgba(0, 0, 0, 0.12),
     0 8px 32px rgba(0, 0, 0, 0.08),
     0 0 0 1px rgba(255, 255, 255, 0.05),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   animation: panel-enter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: bottom right;
 }
@@ -789,12 +843,13 @@
 }
 
 .error-button-panel.dark {
-  background: linear-gradient(135deg, 
-    rgba(15, 23, 42, 0.95), 
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.95),
     rgba(30, 41, 59, 0.9)
   );
   border: 1px solid rgba(71, 85, 105, 0.2);
-  box-shadow: 
+  box-shadow:
     0 16px 64px rgba(0, 0, 0, 0.4),
     0 8px 32px rgba(0, 0, 0, 0.3),
     0 0 0 1px rgba(255, 255, 255, 0.03),
@@ -802,7 +857,11 @@
 }
 
 .error-button-panel.light {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(248, 250, 252, 0.9)
+  );
   border: 1px solid rgba(226, 232, 240, 0.8);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
@@ -815,8 +874,9 @@
   padding: 24px 24px 20px 24px;
   margin: 0;
   border-bottom: 1px solid rgba(148, 163, 184, 0.12);
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.02), 
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.02),
     rgba(255, 255, 255, 0.01)
   );
   backdrop-filter: blur(8px);
@@ -921,8 +981,9 @@
   height: 64px;
   border-radius: 14px;
   border: 1px solid rgba(148, 163, 184, 0.15);
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.08), 
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
     rgba(255, 255, 255, 0.03)
   );
   cursor: pointer;
@@ -935,7 +996,7 @@
   overflow: hidden;
   box-sizing: border-box;
   backdrop-filter: blur(8px);
-  box-shadow: 
+  box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.04),
     0 0 0 1px rgba(255, 255, 255, 0.05);
 }
@@ -947,9 +1008,10 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.1), 
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
     transparent
   );
   transition: left 0.6s ease;
@@ -960,12 +1022,13 @@
 }
 
 .error-button:hover {
-  background: linear-gradient(135deg, 
-    rgba(255, 255, 255, 0.12), 
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12),
     rgba(255, 255, 255, 0.06)
   );
   transform: translateY(-2px);
-  box-shadow: 
+  box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.08),
     0 4px 12px rgba(0, 0, 0, 0.04),
     0 0 0 1px rgba(255, 255, 255, 0.08);
@@ -978,12 +1041,13 @@
 }
 
 .error-button.running {
-  background: linear-gradient(135deg, 
-    rgba(59, 130, 246, 0.12), 
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.12),
     rgba(147, 51, 234, 0.08)
   );
   border-color: rgba(59, 130, 246, 0.3);
-  box-shadow: 
+  box-shadow:
     0 4px 16px rgba(59, 130, 246, 0.15),
     0 0 0 1px rgba(59, 130, 246, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -991,14 +1055,15 @@
 }
 
 @keyframes running-pulse {
-  0%, 100% { 
-    box-shadow: 
+  0%,
+  100% {
+    box-shadow:
       0 4px 16px rgba(59, 130, 246, 0.15),
       0 0 0 1px rgba(59, 130, 246, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
-  50% { 
-    box-shadow: 
+  50% {
+    box-shadow:
       0 4px 16px rgba(59, 130, 246, 0.25),
       0 0 0 1px rgba(59, 130, 246, 0.2),
       inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -1006,23 +1071,25 @@
 }
 
 .error-button.dark {
-  background: linear-gradient(135deg, 
-    rgba(30, 41, 59, 0.6), 
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.6),
     rgba(15, 23, 42, 0.4)
   );
   border-color: rgba(71, 85, 105, 0.2);
   color: #f1f5f9;
-  box-shadow: 
+  box-shadow:
     0 2px 8px rgba(0, 0, 0, 0.2),
     0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
 .error-button.dark:hover {
-  background: linear-gradient(135deg, 
-    rgba(30, 41, 59, 0.8), 
+  background: linear-gradient(
+    135deg,
+    rgba(30, 41, 59, 0.8),
     rgba(15, 23, 42, 0.6)
   );
-  box-shadow: 
+  box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.3),
     0 4px 12px rgba(0, 0, 0, 0.2),
     0 0 0 1px rgba(255, 255, 255, 0.05);
@@ -1133,7 +1200,11 @@
   height: 48px;
   border-radius: 12px;
   border: 1px solid rgba(239, 68, 68, 0.3);
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.1),
+    rgba(220, 38, 38, 0.1)
+  );
   color: #fca5a5;
   cursor: pointer;
   display: flex;
@@ -1152,13 +1223,21 @@
 }
 
 .stop-button.dark {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.1));
+  background: linear-gradient(
+    135deg,
+    rgba(239, 68, 68, 0.1),
+    rgba(220, 38, 38, 0.1)
+  );
   color: #fca5a5;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .stop-button.light {
-  background: linear-gradient(135deg, rgba(254, 242, 242, 0.8), rgba(254, 226, 226, 0.8));
+  background: linear-gradient(
+    135deg,
+    rgba(254, 242, 242, 0.8),
+    rgba(254, 226, 226, 0.8)
+  );
   color: #dc2626;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -1206,7 +1285,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -1358,28 +1438,28 @@
   .error-button-panel {
     padding: 16px;
   }
-  
+
   .panel-header {
     margin-bottom: 16px;
   }
-  
+
   .panel-title {
     font-size: 18px;
   }
-  
+
   .buttons-container {
     max-height: 300px;
   }
-  
+
   .error-button {
     height: 52px;
     padding: 10px 12px;
   }
-  
+
   .button-label {
     font-size: 14px;
   }
-  
+
   .button-description {
     font-size: 12px;
   }

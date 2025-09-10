@@ -96,7 +96,7 @@ const DevStressPanel: React.FC<DevStressPanelProps> = ({
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const { isDark, toggleTheme } = useTheme(propIsDarkMode ? 'dark' : 'light');
-  const { runningErrors, logs, totalLogs, startError, stopError, clearLogs } =
+  const { runningErrors, logs, totalLogs, startError, stopError, stopAllErrors, clearLogs } =
     useErrorSimulation({
       onError,
       showLogs,
@@ -218,6 +218,18 @@ const DevStressPanel: React.FC<DevStressPanelProps> = ({
             totalLogs={totalLogs}
             isDark={isDark}
           />
+
+          {runningCount > 0 && (
+            <div className={`control-section ${isDark ? 'dark' : 'light'}`}>
+              <button
+                className={`stop-all-button ${isDark ? 'dark' : 'light'}`}
+                onClick={stopAllErrors}
+                title="Stop all running error simulations"
+              >
+                🛑 Stop All ({runningCount})
+              </button>
+            </div>
+          )}
 
           {showLogs && logs.length > 0 && (
             <div className={`logs-section ${isDark ? 'dark' : 'light'}`}>
